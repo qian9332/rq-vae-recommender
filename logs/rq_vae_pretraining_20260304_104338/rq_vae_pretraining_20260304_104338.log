@@ -1,0 +1,358 @@
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO - ============================================================
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO - Training Configuration
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO - ============================================================
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO - 
+codebook:
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   num_layers: 3
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   codebook_size: 256
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   embedding_dim: 128
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   ema_decay: 0.99
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   commitment_cost: 0.25
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   dead_code_threshold: 100
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   dead_code_reset_threshold: 0.01
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO - 
+mmoe:
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   text_input_dim: 768
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   visual_input_dim: 2048
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   hidden_dim: 256
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   output_dim: 128
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   num_experts: 4
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   num_tasks: 2
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   expert_hidden_dim: 128
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   dropout: 0.1
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   activation: relu
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO - 
+recommender:
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   num_users: 10537
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   num_items: 16297
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   user_embedding_dim: 128
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   max_seq_length: 50
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   num_heads: 4
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   num_layers: 2
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   dropout: 0.2
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   temperature: 0.1
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO - 
+training:
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   batch_size: 256
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   learning_rate: 0.0001
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   weight_decay: 1e-05
+2026-03-04 10:43:38,525 - rq_vae_pretraining - INFO -   num_epochs: 100
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO -   warmup_steps: 1000
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO -   max_grad_norm: 1.0
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO -   save_steps: 1000
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO -   eval_steps: 500
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO -   log_steps: 100
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO -   pretrain_epochs: 50
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO -   pretrain_lr: 0.001
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO -   finetune_epochs: 30
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO -   finetune_lr: 5e-05
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO -   reconstruction_weight: 1.0
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO -   recommendation_weight: 1.0
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO - experiment_name: rq_vae_pretraining
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO - seed: 42
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO - device: cpu
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO - 
+Config saved to ./logs/rq_vae_pretraining_20260304_104338/config.json
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO - 
+============================================================
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO - Starting RQ-VAE Pretraining
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO - ============================================================
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO - Device: cpu
+2026-03-04 10:43:38,526 - rq_vae_pretraining - INFO - 
+Preparing Data...
+2026-03-04 10:43:38,773 - rq_vae_pretraining - INFO - Text features: (16297, 768)
+2026-03-04 10:43:38,773 - rq_vae_pretraining - INFO - Visual features: (16297, 2048)
+2026-03-04 10:43:39,339 - rq_vae_pretraining - INFO - Train samples: 14667
+2026-03-04 10:43:39,339 - rq_vae_pretraining - INFO - Val samples: 1630
+2026-03-04 10:43:39,339 - rq_vae_pretraining - INFO - Batch size: 256
+2026-03-04 10:43:39,357 - rq_vae_pretraining - INFO - 
+Building Models...
+2026-03-04 10:43:39,370 - rq_vae_pretraining - INFO - 
+MMOE Encoder Summary:
+2026-03-04 10:43:39,371 - rq_vae_pretraining - INFO - ----------------------------------------
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   text_missing_embedding: torch.Size([1, 768]), 768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   visual_missing_embedding: torch.Size([1, 2048]), 2,048 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.text_projection.0.weight: torch.Size([256, 768]), 196,608 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.text_projection.0.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.text_projection.1.weight: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.text_projection.1.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.visual_projection.0.weight: torch.Size([256, 2048]), 524,288 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.visual_projection.0.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.visual_projection.1.weight: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.visual_projection.1.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.0.network.0.weight: torch.Size([128, 256]), 32,768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.0.network.0.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.0.network.1.weight: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.0.network.1.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.0.network.4.weight: torch.Size([256, 128]), 32,768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.0.network.4.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.0.network.5.weight: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.0.network.5.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.1.network.0.weight: torch.Size([128, 256]), 32,768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.1.network.0.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.1.network.1.weight: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.1.network.1.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.1.network.4.weight: torch.Size([256, 128]), 32,768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.1.network.4.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.1.network.5.weight: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.1.network.5.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.2.network.0.weight: torch.Size([128, 256]), 32,768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.2.network.0.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.2.network.1.weight: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.2.network.1.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.2.network.4.weight: torch.Size([256, 128]), 32,768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.2.network.4.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.2.network.5.weight: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.2.network.5.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.3.network.0.weight: torch.Size([128, 256]), 32,768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.3.network.0.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.3.network.1.weight: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.3.network.1.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.3.network.4.weight: torch.Size([256, 128]), 32,768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.3.network.4.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.3.network.5.weight: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.experts.3.network.5.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.gates.0.gate.0.weight: torch.Size([4, 256]), 1,024 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.gates.0.gate.0.bias: torch.Size([4]), 4 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.gates.1.gate.0.weight: torch.Size([4, 256]), 1,024 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.gates.1.gate.0.bias: torch.Size([4]), 4 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.towers.0.0.weight: torch.Size([128, 256]), 32,768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.towers.0.0.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.towers.0.1.weight: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.towers.0.1.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.towers.1.0.weight: torch.Size([128, 256]), 32,768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.towers.1.0.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.towers.1.1.weight: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.towers.1.1.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.fusion_layer.0.weight: torch.Size([128, 256]), 32,768 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.fusion_layer.0.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.fusion_layer.1.weight: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.fusion_layer.1.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.modality_gate.0.weight: torch.Size([2, 256]), 512 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - DEBUG -   mmoe.modality_gate.0.bias: torch.Size([2]), 2 params
+2026-03-04 10:43:39,371 - rq_vae_pretraining - INFO - Total parameters: 1,094,026
+2026-03-04 10:43:39,371 - rq_vae_pretraining - INFO - Trainable parameters: 1,094,026
+2026-03-04 10:43:39,371 - rq_vae_pretraining - INFO - Non-trainable parameters: 0
+2026-03-04 10:43:39,372 - rq_vae_pretraining - INFO - Model size: 4.17 MB
+2026-03-04 10:43:39,372 - rq_vae_pretraining - INFO - 
+RQ-VAE Summary:
+2026-03-04 10:43:39,372 - rq_vae_pretraining - INFO - ----------------------------------------
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   encoder.encoder.0.weight: torch.Size([256, 128]), 32,768 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   encoder.encoder.0.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   encoder.encoder.1.weight: torch.Size([256]), 256 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   encoder.encoder.1.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   encoder.encoder.4.weight: torch.Size([128, 256]), 32,768 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   encoder.encoder.4.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   decoder.decoder.0.weight: torch.Size([256, 128]), 32,768 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   decoder.decoder.0.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   decoder.decoder.1.weight: torch.Size([256]), 256 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   decoder.decoder.1.bias: torch.Size([256]), 256 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   decoder.decoder.4.weight: torch.Size([128, 256]), 32,768 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - DEBUG -   decoder.decoder.4.bias: torch.Size([128]), 128 params
+2026-03-04 10:43:39,372 - rq_vae_pretraining - INFO - Total parameters: 132,864
+2026-03-04 10:43:39,372 - rq_vae_pretraining - INFO - Trainable parameters: 132,864
+2026-03-04 10:43:39,372 - rq_vae_pretraining - INFO - Non-trainable parameters: 0
+2026-03-04 10:43:39,372 - rq_vae_pretraining - INFO - Model size: 0.51 MB
+2026-03-04 10:43:41,954 - rq_vae_pretraining - INFO - 
+Optimizer: AdamW
+2026-03-04 10:43:41,954 - rq_vae_pretraining - INFO - Learning rate: 0.001
+2026-03-04 10:43:41,954 - rq_vae_pretraining - INFO - Weight decay: 1e-05
+2026-03-04 10:43:41,954 - rq_vae_pretraining - INFO - 
+============================================================
+2026-03-04 10:43:41,954 - rq_vae_pretraining - INFO - Epoch 1/5
+2026-03-04 10:43:41,954 - rq_vae_pretraining - INFO - ============================================================
+2026-03-04 10:43:42,099 - rq_vae_pretraining - DEBUG - Batch 0/58 - Loss: 2.0719 - LR: 0.000043 - usage: 0.0404
+2026-03-04 10:43:43,503 - rq_vae_pretraining - DEBUG - Batch 50/58 - Loss: 0.2262 - LR: 0.000981 - usage: 0.0315
+2026-03-04 10:43:43,732 - rq_vae_pretraining - INFO - 
+Epoch 1 Summary:
+2026-03-04 10:43:43,732 - rq_vae_pretraining - INFO -   Time: 1.8s
+2026-03-04 10:43:43,732 - rq_vae_pretraining - INFO -   Train Metrics:
+2026-03-04 10:43:43,732 - rq_vae_pretraining - INFO -     loss: 0.6341
+2026-03-04 10:43:43,732 - rq_vae_pretraining - INFO -     reconstruction_loss: 0.0979
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -     commitment_loss: 0.0587
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -     alignment_loss: 4.5244
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -     usage_rate: 0.0284
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -   Val Metrics:
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -     val_loss: 0.0232
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -     val_reconstruction_loss: 0.0087
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -     val_usage_rate: 0.0039
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO - 
+Codebook Usage Statistics (Epoch 1):
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -   layer_0:
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -     Average: 100.48%
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -     Max: 20010.35%
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -     Min: 1.72%
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -   layer_1:
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -     Average: 100.44%
+2026-03-04 10:43:43,733 - rq_vae_pretraining - INFO -     Max: 25117.24%
+2026-03-04 10:43:43,734 - rq_vae_pretraining - INFO -     Min: 1.72%
+2026-03-04 10:43:43,734 - rq_vae_pretraining - INFO -   layer_2:
+2026-03-04 10:43:43,734 - rq_vae_pretraining - INFO -     Average: 100.38%
+2026-03-04 10:43:43,734 - rq_vae_pretraining - INFO -     Max: 24800.00%
+2026-03-04 10:43:43,734 - rq_vae_pretraining - INFO -     Min: 1.72%
+2026-03-04 10:43:43,749 - rq_vae_pretraining - INFO - 
+Checkpoint saved: ./logs/rq_vae_pretraining_20260304_104338/checkpoints/checkpoint_epoch_1.pt
+2026-03-04 10:43:43,749 - rq_vae_pretraining - INFO -   Epoch: 1
+2026-03-04 10:43:43,749 - rq_vae_pretraining - INFO -   Metric: 0.0232
+2026-03-04 10:43:43,759 - rq_vae_pretraining - INFO -   New best model! Val loss: 0.0232
+2026-03-04 10:43:43,759 - rq_vae_pretraining - INFO - 
+============================================================
+2026-03-04 10:43:43,760 - rq_vae_pretraining - INFO - Epoch 2/5
+2026-03-04 10:43:43,760 - rq_vae_pretraining - INFO - ============================================================
+2026-03-04 10:43:43,787 - rq_vae_pretraining - DEBUG - Batch 0/58 - Loss: 0.0831 - LR: 0.000966 - usage: 0.0039
+2026-03-04 10:43:45,400 - rq_vae_pretraining - DEBUG - Batch 50/58 - Loss: 0.0209 - LR: 0.000781 - usage: 0.0131
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO - 
+Epoch 2 Summary:
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO -   Time: 2.0s
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO -   Train Metrics:
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO -     loss: 0.0335
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO -     reconstruction_loss: 0.0109
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO -     commitment_loss: 0.0080
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO -     alignment_loss: 0.0856
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO -     usage_rate: 0.0174
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO -   Val Metrics:
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO -     val_loss: 0.0024
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO -     val_reconstruction_loss: 0.0010
+2026-03-04 10:43:45,710 - rq_vae_pretraining - INFO -     val_usage_rate: 0.0039
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO - 
+Codebook Usage Statistics (Epoch 2):
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -   layer_0:
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -     Average: 92.17%
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -     Max: 22525.00%
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -     Min: 0.86%
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -   layer_1:
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -     Average: 99.31%
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -     Max: 24962.93%
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -     Min: 0.86%
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -   layer_2:
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -     Average: 98.69%
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -     Max: 24800.00%
+2026-03-04 10:43:45,711 - rq_vae_pretraining - INFO -     Min: 0.86%
+2026-03-04 10:43:45,723 - rq_vae_pretraining - INFO - 
+Checkpoint saved: ./logs/rq_vae_pretraining_20260304_104338/checkpoints/checkpoint_epoch_2.pt
+2026-03-04 10:43:45,723 - rq_vae_pretraining - INFO -   Epoch: 2
+2026-03-04 10:43:45,723 - rq_vae_pretraining - INFO -   Metric: 0.0024
+2026-03-04 10:43:45,735 - rq_vae_pretraining - INFO -   New best model! Val loss: 0.0024
+2026-03-04 10:43:45,735 - rq_vae_pretraining - INFO - 
+============================================================
+2026-03-04 10:43:45,735 - rq_vae_pretraining - INFO - Epoch 3/5
+2026-03-04 10:43:45,735 - rq_vae_pretraining - INFO - ============================================================
+2026-03-04 10:43:45,776 - rq_vae_pretraining - DEBUG - Batch 0/58 - Loss: 0.0200 - LR: 0.000740 - usage: 0.0586
+2026-03-04 10:43:47,681 - rq_vae_pretraining - DEBUG - Batch 50/58 - Loss: 0.0150 - LR: 0.000449 - usage: 0.0422
+2026-03-04 10:43:47,939 - rq_vae_pretraining - INFO - 
+Epoch 3 Summary:
+2026-03-04 10:43:47,939 - rq_vae_pretraining - INFO -   Time: 2.2s
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -   Train Metrics:
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     loss: 0.0168
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     reconstruction_loss: 0.0065
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     commitment_loss: 0.0048
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     alignment_loss: 0.0317
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     usage_rate: 0.0401
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -   Val Metrics:
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     val_loss: 0.0014
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     val_reconstruction_loss: 0.0006
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     val_usage_rate: 0.0039
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO - 
+Codebook Usage Statistics (Epoch 3):
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -   layer_0:
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     Average: 92.48%
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     Max: 22922.99%
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     Min: 0.57%
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -   layer_1:
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     Average: 99.13%
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     Max: 24843.68%
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     Min: 0.57%
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -   layer_2:
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     Average: 98.72%
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     Max: 24720.12%
+2026-03-04 10:43:47,940 - rq_vae_pretraining - INFO -     Min: 0.57%
+2026-03-04 10:43:47,951 - rq_vae_pretraining - INFO - 
+Checkpoint saved: ./logs/rq_vae_pretraining_20260304_104338/checkpoints/checkpoint_epoch_3.pt
+2026-03-04 10:43:47,951 - rq_vae_pretraining - INFO -   Epoch: 3
+2026-03-04 10:43:47,951 - rq_vae_pretraining - INFO -   Metric: 0.0014
+2026-03-04 10:43:47,963 - rq_vae_pretraining - INFO -   New best model! Val loss: 0.0014
+2026-03-04 10:43:47,963 - rq_vae_pretraining - INFO - 
+============================================================
+2026-03-04 10:43:47,963 - rq_vae_pretraining - INFO - Epoch 4/5
+2026-03-04 10:43:47,963 - rq_vae_pretraining - INFO - ============================================================
+2026-03-04 10:43:47,996 - rq_vae_pretraining - DEBUG - Batch 0/58 - Loss: 0.0147 - LR: 0.000401 - usage: 0.0326
+2026-03-04 10:43:49,740 - rq_vae_pretraining - DEBUG - Batch 50/58 - Loss: 0.0131 - LR: 0.000141 - usage: 0.0208
+2026-03-04 10:43:50,026 - rq_vae_pretraining - INFO - 
+Epoch 4 Summary:
+2026-03-04 10:43:50,026 - rq_vae_pretraining - INFO -   Time: 2.1s
+2026-03-04 10:43:50,026 - rq_vae_pretraining - INFO -   Train Metrics:
+2026-03-04 10:43:50,026 - rq_vae_pretraining - INFO -     loss: 0.0137
+2026-03-04 10:43:50,026 - rq_vae_pretraining - INFO -     reconstruction_loss: 0.0055
+2026-03-04 10:43:50,026 - rq_vae_pretraining - INFO -     commitment_loss: 0.0041
+2026-03-04 10:43:50,026 - rq_vae_pretraining - INFO -     alignment_loss: 0.0249
+2026-03-04 10:43:50,026 - rq_vae_pretraining - INFO -     usage_rate: 0.0203
+2026-03-04 10:43:50,026 - rq_vae_pretraining - INFO -   Val Metrics:
+2026-03-04 10:43:50,026 - rq_vae_pretraining - INFO -     val_loss: 0.0011
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -     val_reconstruction_loss: 0.0004
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -     val_usage_rate: 0.0039
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO - 
+Codebook Usage Statistics (Epoch 4):
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -   layer_0:
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -     Average: 93.80%
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -     Max: 23346.98%
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -     Min: 0.43%
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -   layer_1:
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -     Average: 98.74%
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -     Max: 24877.15%
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -     Min: 0.43%
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -   layer_2:
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -     Average: 98.47%
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -     Max: 24787.07%
+2026-03-04 10:43:50,027 - rq_vae_pretraining - INFO -     Min: 0.43%
+2026-03-04 10:43:50,038 - rq_vae_pretraining - INFO - 
+Checkpoint saved: ./logs/rq_vae_pretraining_20260304_104338/checkpoints/checkpoint_epoch_4.pt
+2026-03-04 10:43:50,038 - rq_vae_pretraining - INFO -   Epoch: 4
+2026-03-04 10:43:50,038 - rq_vae_pretraining - INFO -   Metric: 0.0011
+2026-03-04 10:43:50,050 - rq_vae_pretraining - INFO -   New best model! Val loss: 0.0011
+2026-03-04 10:43:50,050 - rq_vae_pretraining - INFO - 
+============================================================
+2026-03-04 10:43:50,050 - rq_vae_pretraining - INFO - Epoch 5/5
+2026-03-04 10:43:50,050 - rq_vae_pretraining - INFO - ============================================================
+2026-03-04 10:43:50,087 - rq_vae_pretraining - DEBUG - Batch 0/58 - Loss: 0.0130 - LR: 0.000109 - usage: 0.0234
+2026-03-04 10:43:52,099 - rq_vae_pretraining - DEBUG - Batch 50/58 - Loss: 0.0128 - LR: 0.000001 - usage: 0.0185
+2026-03-04 10:43:52,410 - rq_vae_pretraining - INFO - 
+Epoch 5 Summary:
+2026-03-04 10:43:52,410 - rq_vae_pretraining - INFO -   Time: 2.4s
+2026-03-04 10:43:52,410 - rq_vae_pretraining - INFO -   Train Metrics:
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     loss: 0.0128
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     reconstruction_loss: 0.0052
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     commitment_loss: 0.0039
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     alignment_loss: 0.0232
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     usage_rate: 0.0188
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -   Val Metrics:
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     val_loss: 0.0011
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     val_reconstruction_loss: 0.0004
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     val_usage_rate: 0.0039
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO - 
+Codebook Usage Statistics (Epoch 5):
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -   layer_0:
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     Average: 94.27%
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     Max: 23602.41%
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     Min: 0.34%
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -   layer_1:
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     Average: 98.35%
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     Max: 24893.10%
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     Min: 0.34%
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -   layer_2:
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     Average: 98.16%
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     Max: 24846.55%
+2026-03-04 10:43:52,411 - rq_vae_pretraining - INFO -     Min: 0.34%
+2026-03-04 10:43:52,422 - rq_vae_pretraining - INFO - 
+Checkpoint saved: ./logs/rq_vae_pretraining_20260304_104338/checkpoints/checkpoint_epoch_5.pt
+2026-03-04 10:43:52,422 - rq_vae_pretraining - INFO -   Epoch: 5
+2026-03-04 10:43:52,422 - rq_vae_pretraining - INFO -   Metric: 0.0011
+2026-03-04 10:43:52,434 - rq_vae_pretraining - INFO -   New best model! Val loss: 0.0011
+2026-03-04 10:43:52,434 - rq_vae_pretraining - INFO - 
+============================================================
+2026-03-04 10:43:52,434 - rq_vae_pretraining - INFO - Training Complete!
+2026-03-04 10:43:52,434 - rq_vae_pretraining - INFO - ============================================================
+2026-03-04 10:43:52,434 - rq_vae_pretraining - INFO - Total Time: 0.00 hours
+2026-03-04 10:43:52,434 - rq_vae_pretraining - INFO - Best Metric: 0.0011
+2026-03-04 10:43:52,456 - rq_vae_pretraining - INFO - Training history saved to ./logs/rq_vae_pretraining_20260304_104338/training_history.json
+2026-03-04 10:43:52,456 - rq_vae_pretraining - INFO - 
+Logs saved to ./logs/rq_vae_pretraining_20260304_104338

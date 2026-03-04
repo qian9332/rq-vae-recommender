@@ -1,0 +1,52 @@
+{
+  "codebook": {
+    "num_layers": 3,
+    "codebook_size": 256,
+    "embedding_dim": 128,
+    "ema_decay": 0.99,
+    "commitment_cost": 0.25,
+    "dead_code_threshold": 100,
+    "dead_code_reset_threshold": 0.01
+  },
+  "mmoe": {
+    "text_input_dim": 768,
+    "visual_input_dim": 2048,
+    "hidden_dim": 256,
+    "output_dim": 128,
+    "num_experts": 4,
+    "num_tasks": 2,
+    "expert_hidden_dim": 128,
+    "dropout": 0.1,
+    "activation": "relu"
+  },
+  "recommender": {
+    "num_users": 10537,
+    "num_items": 16297,
+    "user_embedding_dim": 128,
+    "max_seq_length": 50,
+    "num_heads": 4,
+    "num_layers": 2,
+    "dropout": 0.2,
+    "temperature": 0.1
+  },
+  "training": {
+    "batch_size": 256,
+    "learning_rate": 0.0001,
+    "weight_decay": 1e-05,
+    "num_epochs": 100,
+    "warmup_steps": 1000,
+    "max_grad_norm": 1.0,
+    "save_steps": 1000,
+    "eval_steps": 500,
+    "log_steps": 100,
+    "pretrain_epochs": 50,
+    "pretrain_lr": 0.001,
+    "finetune_epochs": 30,
+    "finetune_lr": 5e-05,
+    "reconstruction_weight": 1.0,
+    "recommendation_weight": 1.0
+  },
+  "experiment_name": "rq_vae_pretraining",
+  "seed": 42,
+  "device": "cpu"
+}
