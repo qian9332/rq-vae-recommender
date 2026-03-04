@@ -38,8 +38,8 @@ class MMOEConfig:
 @dataclass
 class RecommenderConfig:
     """推荐模型配置"""
-    num_users: int = 10000  # 用户数量
-    num_items: int = 50000  # 物品数量
+    num_users: int = 10537  # 用户数量 (Amazon Video_Games)
+    num_items: int = 16297  # 物品数量 (Amazon Video_Games)
     user_embedding_dim: int = 128  # 用户嵌入维度
     max_seq_length: int = 50  # 最大序列长度
     num_heads: int = 4  # Transformer注意力头数
