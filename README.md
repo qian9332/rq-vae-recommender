@@ -42,7 +42,16 @@ rq-vae-recommender/
 │   ├── __init__.py
 │   └── dataset.py         # 数据处理
 ├── training/
-│   └── train.py           # 训练脚本
+│   ├── train.py           # 训练脚本
+│   └── train_with_logging.py  # 带日志的训练脚本
+├── deployment/            # 部署服务
+│   ├── inference.py       # 推理服务
+│   ├── api.py             # FastAPI接口
+│   ├── Dockerfile         # Docker配置
+│   ├── docker-compose.yml
+│   ├── start.sh           # 启动脚本
+│   └── DEPLOYMENT.md      # 部署文档
+├── logs/                  # 训练日志和检查点
 ├── utils/
 │   ├── __init__.py
 │   ├── metrics.py         # 评估指标
@@ -101,6 +110,68 @@ python -m training.train --mode finetune --data_dir ./data --num_epochs 30
 ```bash
 python -m training.train --mode all --data_dir ./data
 ```
+
+## 🐳 部署服务
+
+### 方式一：直接运行
+
+```bash
+cd deployment
+chmod +x start.sh
+./start.sh
+```
+
+### 方式二：Docker部署
+
+```bash
+cd deployment
+docker build -t rq-vae-recommender -f Dockerfile ..
+docker run -d -p 8000:8000 --name rq-vae-api rq-vae-recommender
+```
+
+### 方式三：Docker Compose
+
+```bash
+cd deployment
+docker-compose up -d
+```
+
+### API接口
+
+服务启动后访问：
+- API文档: http://localhost:8000/docs
+- 健康检查: http://localhost:8000/health
+
+#### 获取推荐
+
+```bash
+curl -X POST http://localhost:8000/recommend \
+    -H "Content-Type: application/json" \
+    -d '{"user_id": "user123", "history_items": ["0", "1", "2"], "top_k": 10}'
+```
+
+#### 获取相似商品
+
+```bash
+curl -X POST http://localhost:8000/similar \
+    -H "Content-Type: application/json" \
+    -d '{"item_id": "0", "top_k": 5}'
+```
+
+详细部署说明请查看 [deployment/DEPLOYMENT.md](deployment/DEPLOYMENT.md)
+
+## 📊 训练结果
+
+### Amazon Video_Games 数据集
+
+| 指标 | 数值 |
+|------|------|
+| 商品数 | 16,297 |
+| 用户数 | 10,537 |
+| 交互数 | 110,079 |
+| 训练损失 | 0.6341 → 0.0128 |
+| 验证损失 | 0.0011 |
+| 码本使用率 | 94-98% |
 
 ### 代码示例
 
