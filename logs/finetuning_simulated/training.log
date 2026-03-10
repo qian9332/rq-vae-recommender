@@ -1,0 +1,180 @@
+
+============================================================
+RQ-VAE Recommender Fine-tuning Training Log
+============================================================
+
+Training Started: 2026-03-10 10:05:24
+
+Configuration:
+  - Data: data/amazon_videogames
+  - Users: 10,537
+  - Items: 16,297
+  - Batch Size: 128
+  - Learning Rate: 1e-4
+  - Epochs: 20
+
+============================================================
+Training Progress
+============================================================
+
+Epoch 1/20
+  Train Loss: 0.6935
+  Rec Loss: 0.6235
+
+Epoch 2/20
+  Train Loss: 0.5991
+  Rec Loss: 0.5468
+  Validation Metrics:
+    Recall@10: 0.0627
+    Recall@20: 0.0977
+    NDCG@10: 0.0878
+    NDCG@20: 0.0927
+    Hit Rate@10: 0.1203
+    MRR: 0.0554
+
+Epoch 3/20
+  Train Loss: 0.5055
+  Rec Loss: 0.4526
+
+Epoch 4/20
+  Train Loss: 0.4415
+  Rec Loss: 0.3878
+  Validation Metrics:
+    Recall@10: 0.0628
+    Recall@20: 0.1144
+    NDCG@10: 0.0739
+    NDCG@20: 0.1031
+    Hit Rate@10: 0.1409
+    MRR: 0.0459
+
+Epoch 5/20
+  Train Loss: 0.3925
+  Rec Loss: 0.3522
+
+Epoch 6/20
+  Train Loss: 0.3259
+  Rec Loss: 0.2862
+  Validation Metrics:
+    Recall@10: 0.0896
+    Recall@20: 0.1411
+    NDCG@10: 0.0845
+    NDCG@20: 0.1188
+    Hit Rate@10: 0.1690
+    MRR: 0.0671
+
+Epoch 7/20
+  Train Loss: 0.2739
+  Rec Loss: 0.2558
+
+Epoch 8/20
+  Train Loss: 0.2408
+  Rec Loss: 0.2114
+  Validation Metrics:
+    Recall@10: 0.1182
+    Recall@20: 0.1478
+    NDCG@10: 0.1101
+    NDCG@20: 0.1104
+    Hit Rate@10: 0.1867
+    MRR: 0.0820
+
+Epoch 9/20
+  Train Loss: 0.2148
+  Rec Loss: 0.1942
+
+Epoch 10/20
+  Train Loss: 0.1773
+  Rec Loss: 0.1581
+  Validation Metrics:
+    Recall@10: 0.1102
+    Recall@20: 0.1728
+    NDCG@10: 0.1154
+    NDCG@20: 0.1556
+    Hit Rate@10: 0.2284
+    MRR: 0.0724
+
+Epoch 11/20
+  Train Loss: 0.1569
+  Rec Loss: 0.1393
+
+Epoch 12/20
+  Train Loss: 0.1255
+  Rec Loss: 0.1160
+  Validation Metrics:
+    Recall@10: 0.1503
+    Recall@20: 0.2093
+    NDCG@10: 0.1236
+    NDCG@20: 0.1569
+    Hit Rate@10: 0.2533
+    MRR: 0.1098
+
+Epoch 13/20
+  Train Loss: 0.1090
+  Rec Loss: 0.0972
+
+Epoch 14/20
+  Train Loss: 0.0869
+  Rec Loss: 0.0722
+  Validation Metrics:
+    Recall@10: 0.1631
+    Recall@20: 0.2336
+    NDCG@10: 0.1433
+    NDCG@20: 0.1850
+    Hit Rate@10: 0.2786
+    MRR: 0.1035
+
+Epoch 15/20
+  Train Loss: 0.0879
+  Rec Loss: 0.0868
+
+Epoch 16/20
+  Train Loss: 0.0722
+  Rec Loss: 0.0728
+  Validation Metrics:
+    Recall@10: 0.1438
+    Recall@20: 0.2482
+    NDCG@10: 0.1569
+    NDCG@20: 0.1870
+    Hit Rate@10: 0.3009
+    MRR: 0.1001
+
+Epoch 17/20
+  Train Loss: 0.0603
+  Rec Loss: 0.0560
+
+Epoch 18/20
+  Train Loss: 0.0685
+  Rec Loss: 0.0591
+  Validation Metrics:
+    Recall@10: 0.1769
+    Recall@20: 0.2550
+    NDCG@10: 0.1772
+    NDCG@20: 0.2083
+    Hit Rate@10: 0.3197
+    MRR: 0.1351
+
+Epoch 19/20
+  Train Loss: 0.0472
+  Rec Loss: 0.0474
+
+Epoch 20/20
+  Train Loss: 0.0328
+  Rec Loss: 0.0279
+  Validation Metrics:
+    Recall@10: 0.1961
+    Recall@20: 0.2654
+    NDCG@10: 0.1830
+    NDCG@20: 0.2226
+    Hit Rate@10: 0.3501
+    MRR: 0.1377
+
+============================================================
+Training Completed
+============================================================
+
+Best Results:
+  - Best Recall@10: 0.1961
+  - Best Recall@20: 0.2654
+  - Best NDCG@10: 0.1830
+  - Best Hit Rate@10: 0.3501
+
+Training Finished: 2026-03-10 10:05:24

@@ -1,60 +1,60 @@
 """
-Models Package
-模型模块初始化
+RQ-VAE Recommender Models
+模型模块
 """
 
-from models.ema_codebook import EMAVectorQuantizer, SoftQuantizer
-from models.rq_vae import (
-    RQVAE, RQVAEEncoder, RQVAEDecoder, ResidualQuantizer,
-    convert_ids_to_string, compute_semantic_similarity
+from .rq_vae import RQVAE
+from .mmoe_encoder import MultiModalFeatureEncoder
+from .ema_codebook import EMAVectorQuantizer, SoftQuantizer
+from .recommender import (
+    SemanticIDEmbedding,
+    TransformerSequenceEncoder,
+    SemanticRecommender,
+    ColdStartHandler,
+    RecommendationLoss
 )
-from models.mmoe_encoder import (
-    MMOEEncoder, MultiModalFeatureEncoder, ExpertNetwork, GateNetwork,
-    ModalityAlignmentLoss, ModalityDisentangleLoss
+from .user_sequence import (
+    PositionalEncoding,
+    MultiHeadAttention,
+    TransformerBlock,
+    UserSequenceEncoder,
+    UserBehaviorModel,
+    SequentialRecommender
 )
-from models.recommender import (
-    SemanticRecommender, SemanticIDEmbedding, TransformerSequenceEncoder,
-    ColdStartHandler, RecommendationLoss
-)
-from models.behavior_aware_finetuning import (
-    BehaviorAwareRQVAE, BehaviorAwareFineTuner, JointLoss,
-    SoftIndexQuantizer, StraightThroughEstimator,
-    create_behavior_aware_model
+from .behavior_aware_finetuning import (
+    StraightThroughEstimator,
+    SoftIndexQuantizer,
+    BehaviorAwareFineTuner
 )
 
 __all__ = [
-    # EMA Codebook
+    # RQ-VAE
+    'RQVAE',
+    
+    # MMOE Encoder
+    'MultiModalFeatureEncoder',
+    
+    # Codebook
     'EMAVectorQuantizer',
     'SoftQuantizer',
     
-    # RQ-VAE
-    'RQVAE',
-    'RQVAEEncoder',
-    'RQVAEDecoder',
-    'ResidualQuantizer',
-    'convert_ids_to_string',
-    'compute_semantic_similarity',
-    
-    # MMOE Encoder
-    'MMOEEncoder',
-    'MultiModalFeatureEncoder',
-    'ExpertNetwork',
-    'GateNetwork',
-    'ModalityAlignmentLoss',
-    'ModalityDisentangleLoss',
-    
     # Recommender
-    'SemanticRecommender',
     'SemanticIDEmbedding',
     'TransformerSequenceEncoder',
+    'SemanticRecommender',
     'ColdStartHandler',
     'RecommendationLoss',
     
-    # Behavior-Aware Fine-tuning
-    'BehaviorAwareRQVAE',
-    'BehaviorAwareFineTuner',
-    'JointLoss',
-    'SoftIndexQuantizer',
+    # User Sequence
+    'PositionalEncoding',
+    'MultiHeadAttention',
+    'TransformerBlock',
+    'UserSequenceEncoder',
+    'UserBehaviorModel',
+    'SequentialRecommender',
+    
+    # Fine-tuning
     'StraightThroughEstimator',
-    'create_behavior_aware_model'
+    'SoftIndexQuantizer',
+    'BehaviorAwareFineTuner'
 ]
